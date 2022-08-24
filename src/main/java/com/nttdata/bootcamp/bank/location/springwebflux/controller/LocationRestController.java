@@ -10,7 +10,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/location")
+@RequestMapping("/api/business-microservice04-location/location")
 public class LocationRestController {
 
     private static final Logger log = LoggerFactory.getLogger(LocationServiceInte.class);
@@ -18,7 +18,7 @@ public class LocationRestController {
     @Autowired
     private LocationServiceInte locationServiceInte;
 
-    @PostMapping("create")
+    @PostMapping
     public Mono<Location> create(@RequestBody final Location location) {
         log.debug("Begin RestController create Location");
         return locationServiceInte.create(location);
@@ -36,13 +36,13 @@ public class LocationRestController {
         return locationServiceInte.readByCodeLocation(codeLocation);
     }
 
-    @PutMapping("update/{id}")
+    @PutMapping("/{id}")
     public Mono<Location> updateById(@RequestBody final Location location, @PathVariable("id") final String id) {
         log.debug("Begin RestController updateById Location");
         return locationServiceInte.updateById(id, location);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/{id}")
     public Mono<Void> deleteById(@PathVariable final String id) {
         log.debug("Begin RestController deleteById Location");
         return locationServiceInte.deleteById(id);
