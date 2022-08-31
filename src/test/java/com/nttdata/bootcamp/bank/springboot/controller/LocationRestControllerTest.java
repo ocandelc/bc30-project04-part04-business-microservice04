@@ -1,4 +1,4 @@
-package com.nttdata.bootcamp.bank.springboot.location.springflux.controller;
+package com.nttdata.bootcamp.bank.springboot.controller;
 
 import com.nttdata.bootcamp.bank.springboot.document.Location;
 import com.nttdata.bootcamp.bank.springboot.service.inte.LocationServiceInte;
